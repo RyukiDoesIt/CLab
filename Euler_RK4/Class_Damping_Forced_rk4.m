@@ -27,8 +27,9 @@ while i<n
   i++;
 end
 
-#plot(t,x);
+plot(t,x);
 hold on;
-plot(x,u);
+#plot(x,u);
+legend("Damping");
 xlabel('time')
 ylabel('x value')    

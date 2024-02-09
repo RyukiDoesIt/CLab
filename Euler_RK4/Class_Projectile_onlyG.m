@@ -1,17 +1,17 @@
 clear;
 h=1e-2;
-N=10000;
+N=1000;
 x(1)=0;
 y(1)=0;
 u(1)=15*cos(pi/6);
 v(1)=15*sin(pi/6);
 t(1)=0;
-g=9.8;
+g=10;
 
-f=@(t,x) 0;
-r=@(t,u) u;
-p=@(t,y) -g;
-q=@(t,v) v;
+f=@(t,x) 0; #du/dt=0
+r=@(t,u) u; #dx/dt=u
+p=@(t,y) -g; #dv/dt=-g
+q=@(t,v) v; #dy/dt=v
 
 i=1;
 while i<N
@@ -40,7 +40,9 @@ while i<N
   y(i+1)=y(i)+(h/6)*(l11+2*l22+2*l33+l44);
   
   t(i+1)=t(i)+h;
+  if y(i+1)<=0;
+    break
+  end
   i++;
 end
-
 plot(x,y);
