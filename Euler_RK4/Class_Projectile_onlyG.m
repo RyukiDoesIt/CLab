@@ -45,4 +45,4 @@ while i<N
   end
   i++;
 end
-plot(x,y);
+plot(x,y,'Linewidth',1.5);
