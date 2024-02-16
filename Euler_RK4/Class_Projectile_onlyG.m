@@ -8,35 +8,35 @@ v(1)=15*sin(pi/6);
 t(1)=0;
 g=10;
 
-f=@(t,x) 0; #du/dt=0
-r=@(t,u) u; #dx/dt=u
-p=@(t,y) -g; #dv/dt=-g
-q=@(t,v) v; #dy/dt=v
+f1=@(t,x) 0; #du/dt=0
+f2=@(t,u) u; #dx/dt=u
+f3=@(t,y) -g; #dv/dt=-g
+f4=@(t,v) v; #dy/dt=v
 
 i=1;
 while i<N
-  k1=f(t(i),x(i));
-  k2=f(t(i)+h/2,x(i)+h*k1/2);
-  k3=f(t(i)+h/2,x(i)+h*k2/2);
-  k4=f(t(i)+h,x(i)+k3);
+  k1=f1(t(i),x(i));
+  k2=f1(t(i)+h/2,x(i)+h*k1/2);
+  k3=f1(t(i)+h/2,x(i)+h*k2/2);
+  k4=f1(t(i)+h,x(i)+k3);
   u(i+1)=u(i)+(h/6)*(k1+2*k2+2*k3+k4);
   
-  k11=r(t(i),u(i));
-  k22=r(t(i)+h/2,u(i)+h*k11/2); 
-  k33=r(t(i)+h/2,u(i)+h*k22/2); 
-  k44=r(t(i)+h,u(i)+h*k33);
+  k11=f2(t(i),u(i));
+  k22=f2(t(i)+h/2,u(i)+h*k11/2); 
+  k33=f2(t(i)+h/2,u(i)+h*k22/2); 
+  k44=f2(t(i)+h,u(i)+h*k33);
   x(i+1)=x(i)+(h/6)*(k11+2*k22+2*k33+k44);
   
-  l1=p(t(i),y(i));  
-  l2=p(t(i)+h/2,y(i)+h*l1/2);  
-  l3=p(t(i)+h/2,y(i)+h*l2/2);  
-  l4=p(t(i)+h,y(i)+l3);
+  l1=f3(t(i),y(i));  
+  l2=f3(t(i)+h/2,y(i)+h*l1/2);  
+  l3=f3(t(i)+h/2,y(i)+h*l2/2);  
+  l4=f3(t(i)+h,y(i)+l3);
   v(i+1)=v(i)+(h/6)*(l1+2*l2+2*l3+l4);
   
-  l11=q(t(i),v(i));
-  l22=q(t(i)+h/2,v(i)+h*l11/2);
-  l33=q(t(i)+h/2,v(i)+h*l22/2);
-  l44=q(t(i)+h,v(i)+l33);
+  l11=f4(t(i),v(i));
+  l22=f4(t(i)+h/2,v(i)+h*l11/2);
+  l33=f4(t(i)+h/2,v(i)+h*l22/2);
+  l44=f4(t(i)+h,v(i)+l33);
   y(i+1)=y(i)+(h/6)*(l11+2*l22+2*l33+l44);
   
   t(i+1)=t(i)+h;
@@ -45,4 +45,6 @@ while i<N
   end
   i++;
 end
-plot(x,y,'Linewidth',1.5);
+plot(x,y,'Linewidth',1.5,'Color',[0.1 0.7 0.8]);
+legend('Only G');
+grid on;
