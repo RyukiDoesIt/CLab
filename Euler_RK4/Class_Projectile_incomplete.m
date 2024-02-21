@@ -5,10 +5,11 @@ u(1)=10*cos(pi/6);
 v(1)=10*sin(pi/6);
 t(1)=0;
 b=1;
+w=25;
 h=1e-4;
 N=1000;
 g=9.8;
-f1=@(t,x) -(-b*u+b*25); # Horizontal Wind
+f1=@(t,x) -(-b*u+b*w); # Horizontal Wind
 f2=@(t,u) u; # dx/dt=u
 f3=@(t,y) -g-b*v; # dv/dt=-g-bv
 f4=@(t,v) v; # dy/dt=v
