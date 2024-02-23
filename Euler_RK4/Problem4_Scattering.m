@@ -37,5 +37,5 @@ y1=[0];
 plot(x,y);
 xlim([-60 30]);
 ylim([-2.5 30]);
-#hold on;
-#plot(x1,y1,'Markersize')
+hold on;
+plot(x1,y1,'Markersize',40)
