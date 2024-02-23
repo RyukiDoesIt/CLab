@@ -13,6 +13,5 @@ endfor
 w=(0:N-1)*(2*pi/(N*delta_t))
 
 plot(w, abs(F));
-xlabel('Frequency (rad/s)');
+xlabel('Frequency');
 ylabel('|F(w)|');
-title('Magnitude of F(w)');
