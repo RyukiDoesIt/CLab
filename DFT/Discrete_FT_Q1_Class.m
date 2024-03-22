@@ -1,8 +1,8 @@
 clear;
-f = @(t) cos(25*pi*t);
+f = @(t) cos(25*pi*t)+cos(18*pi*t);
 
 delta_t = 0.01;
-N = 16;
+N = 160;
 t = 0:delta_t:(N-1)*delta_t;
 f_omega = zeros(1, N);
 w0 = 2*pi/N;
