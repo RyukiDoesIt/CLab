@@ -38,4 +38,4 @@ plot(x,y);
 xlim([-60 30]);
 ylim([-2.5 30]);
 hold on;
-plot(x1,y1,'Markersize',40)
+plot(x1,y1,'Markersize',30, 'Color', [0.5 0.8 0.2])

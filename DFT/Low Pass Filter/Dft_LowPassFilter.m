@@ -19,6 +19,6 @@ for n=0:N-1;
     t(n+1)=t(n)+omega0*n/w(n+1);
   endif
 end
-plot(w, f_w);
+plot(w, f_w, color='b');
 hold on;
 plot(t, f_t);
