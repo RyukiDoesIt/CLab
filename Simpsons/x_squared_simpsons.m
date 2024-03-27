@@ -1,9 +1,0 @@
-clear;
-a=1;
-b=4;
-N=1000;
-interval=(b-a)/N;
-x=linspace(a,b,1001);
-y=f(x);
-area=interval*sum(y);
-disp(area);
