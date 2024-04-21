@@ -4,9 +4,9 @@ b = 1;
 l = 1000;
 h = (b - a)/l;
 x = linspace(0, 1, l);
-// f1 = @(x) sqrt(2)*sin(m*pi*x);
-// f2 = @(x) sqrt(2)*sin(n*pi*x);
-// f = @(x) 2*(sin(m*pi*x)*sin(n*pi*x));
+# f1 = @(x) sqrt(2)*sin(m*pi*x);
+# f2 = @(x) sqrt(2)*sin(n*pi*x);
+# f = @(x) 2*(sin(m*pi*x)*sin(n*pi*x));
 
 for m = 1:3
     for n = 1:3
