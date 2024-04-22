@@ -13,7 +13,6 @@ f2=@(x,t) k*y/((x^2+y^2)^1.5);
 
 i=1;
 while i<N
-  
   k1=f1(x(i),y(i));
   k2=f1(x(i)+h*k1/2,y(i)+h*k1/2);
   k3=f1(x(i)+h*k2/2,y(i)+h*k2/2);
